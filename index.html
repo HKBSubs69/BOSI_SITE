@@ -16,20 +16,16 @@
   </nav>
 </header>
 
-<!-- HERO -->
 <section class="hero">
   <h1>Build. Release. Dominate.</h1>
-  <p>
-    Music distribution, ghost production, and publishing — all in one place.
-  </p>
+  <p>Music distribution, ghost production & publishing — all in one place.</p>
 
-  <div class="hero-buttons">
+  <div>
     <a href="pricing.html" class="btn-primary">Get Started</a>
     <a href="#services" class="btn-secondary">View Services</a>
   </div>
 </section>
 
-<!-- SERVICES -->
 <section id="services" class="services">
 
   <div class="card">
@@ -39,7 +35,7 @@
 
   <div class="card">
     <h2>Ghost Production</h2>
-    <p>Get professional music created for you.</p>
+    <p>Get professional music created.</p>
   </div>
 
   <div class="card">
@@ -49,7 +45,6 @@
 
 </section>
 
-<!-- CTA -->
 <section class="cta">
   <h2>Start Your Journey</h2>
   <a href="pricing.html" class="btn-primary">Get Started</a>
@@ -61,6 +56,16 @@
 
 <script>
 document.getElementById("year").innerText = new Date().getFullYear();
+
+// Scroll animation
+const cards = document.querySelectorAll(".card");
+window.addEventListener("scroll", () => {
+  cards.forEach(card => {
+    if (card.getBoundingClientRect().top < window.innerHeight - 50) {
+      card.classList.add("show");
+    }
+  });
+});
 </script>
 
 </body>
