@@ -2,41 +2,51 @@
 <html>
 <head>
   <title>Blue Ocean Studios India</title>
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <!-- FONT -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
   <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
 
+<!-- NAVBAR -->
 <header class="navbar">
+
   <div class="menu-icon" onclick="toggleMenu()">☰</div>
 
   <img src="https://i.ibb.co/S45PTZqN/Blue-Ocean-Studios-India-7-22-2024.png" class="logo">
+
 </header>
 
+<!-- OVERLAY -->
 <div class="overlay" id="overlay" onclick="toggleMenu()"></div>
 
+<!-- SIDEBAR -->
 <div class="sidebar" id="sidebar">
   <a href="index.html">Home</a>
   <a href="pricing.html">Services</a>
   <a href="track.html">Track</a>
 </div>
 
+<!-- HERO -->
 <section class="hero">
   <h1>Build. Release.<br>Dominate.</h1>
 
   <p>
-    Music distribution, ghost production and publishing in one place.
+    Music distribution, ghost production and publishing — all in one place.
   </p>
 
-  <div>
+  <div class="buttons">
     <a href="pricing.html" class="btn-primary">Get Started</a>
     <a href="pricing.html" class="btn-secondary">View Services</a>
   </div>
 </section>
 
+<!-- SERVICES -->
 <section class="services">
 
   <div class="card">
@@ -60,28 +70,7 @@
   <p>© <span id="year"></span> Blue Ocean Studios India</p>
 </footer>
 
-<script>
-document.getElementById("year").innerText = new Date().getFullYear();
-
-function toggleMenu() {
-  document.getElementById("sidebar").classList.toggle("active");
-  document.getElementById("overlay").classList.toggle("active");
-}
-
-const cards = document.querySelectorAll(".card");
-
-const observer = new IntersectionObserver(function(entries) {
-  entries.forEach(function(entry) {
-    if (entry.isIntersecting) {
-      entry.target.classList.add("show");
-    }
-  });
-}, { threshold: 0.2 });
-
-cards.forEach(function(card) {
-  observer.observe(card);
-});
-</script>
+<script src="js/main.js"></script>
 
 </body>
 </html>
