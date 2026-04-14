@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Submit | Blue Ocean Studios India</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <script defer src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script defer src="js/config.js"></script>
+  <script defer src="js/main.js"></script>
+  <script defer src="js/submit.js"></script>
+</head>
+<body>
+  <div class="bg-orb orb-1"></div>
+  <div class="bg-orb orb-2"></div>
+
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <a href="index.html" class="brand">
+        <div class="brand-logo-slot">
+          <img src="PUT_YOUR_LOGO_LINK_HERE" alt="Blue Ocean Studios India logo" />
+        </div>
+      </a>
+      <nav class="nav">
+        <a href="index.html">Home</a>
+        <a href="services.html">Services</a>
+        <a href="pricing.html">Pricing</a>
+        <a href="submit.html" class="active">Submit</a>
+        <a href="track.html">Track</a>
+        <a href="contact.html">Contact</a>
+        <a href="admin-login.html" class="nav-admin">Admin</a>
+      </nav>
+      <button class="menu-toggle" aria-label="Toggle menu">☰</button>
+    </div>
+  </header>
+
+  <main class="container page-top narrow">
+    <section class="section-head reveal">
+      <p class="eyebrow">Submission</p>
+      <h1>Music Artist & Writer Submission</h1>
+      <p>Submit your work and receive a tracking ID.</p>
+    </section>
+
+    <section class="glass-card form-card reveal">
+      <form id="submissionForm" novalidate>
+        <div class="field-row">
+          <div class="field">
+            <label for="submitName">Full Name</label>
+            <input id="submitName" type="text" required />
+          </div>
+          <div class="field">
+            <label for="submitEmail">Email</label>
+            <input id="submitEmail" type="email" required />
+          </div>
+        </div>
+
+        <div class="field-row">
+          <div class="field">
+            <label for="submitType">Type</label>
+            <select id="submitType" required>
+  <option value="">Select Type</option>
+  <option value="">Music Artist</option>
+  <option value="Writer">Writer</option>
+</select>
+          </div>
+          <div class="field">
+            <label for="submitTitle">Track / Book Title</label>
+            <input id="submitTitle" type="text" required />
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="submitLink">Drive / Dropbox / File Link</label>
+          <input id="submitLink" type="url" required />
+        </div>
+
+        <div class="field">
+          <label for="submitNotes">Details</label>
+          <textarea id="submitNotes" rows="6" required></textarea>
+        </div>
+
+        <button type="submit" class="btn btn-primary magnetic">Submit Work</button>
+        <p class="form-status" id="submissionStatus"></p>
+        <div class="tracking-box" id="trackingBox"></div>
+      </form>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-wrap">
+      <p>© <span id="year"></span> Blue Ocean Studios India. All rights reserved.</p>
+      <div class="footer-links">
+        <a href="services.html">Services</a>
+        <a href="track.html">Track</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
