@@ -1,68 +1,116 @@
-body {
+* {
   margin: 0;
-  font-family: 'Poppins', sans-serif;
-  background: radial-gradient(circle at top, #0f0f0f, #050505);
-  color: #fff;
+  padding: 0;
+  box-sizing: border-box;
 }
 
+body {
+  background: #0a0a0a;
+  color: white;
+  font-family: sans-serif;
+}
+
+/* NAVBAR */
+.navbar {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  display: flex;
+  justify-content: space-between;
+  padding: 15px 20px;
+  background: rgba(0,0,0,0.6);
+  backdrop-filter: blur(10px);
+}
+
+.logo {
+  height: 35px;
+}
+
+nav a {
+  margin-left: 15px;
+  color: white;
+  text-decoration: none;
+}
+
+/* HERO */
+.hero {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+
+.hero h1 {
+  font-size: 42px;
+  animation: fadeUp 1s;
+}
+
+.hero p {
+  color: #aaa;
+  margin: 10px;
+}
+
+/* BUTTON */
+.btn-primary {
+  background: linear-gradient(90deg,#7b2ff7,#00c6ff);
+  padding: 12px 20px;
+  border-radius: 10px;
+  text-decoration: none;
+  color: white;
+  margin: 10px;
+}
+
+.btn-primary:hover {
+  transform: scale(1.05);
+}
+
+/* SERVICES */
+.services {
+  padding: 80px 20px;
+}
+
+.card {
+  background: rgba(255,255,255,0.03);
+  margin: 15px 0;
+  padding: 20px;
+  border-radius: 15px;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: 0.4s;
+}
+
+.card.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* FORM */
 form {
-  max-width: 480px;
-  margin: 60px auto;
-  padding: 35px;
+  margin: 120px auto;
+  max-width: 400px;
+  padding: 20px;
   background: rgba(255,255,255,0.03);
   border-radius: 20px;
-  backdrop-filter: blur(12px);
-  box-shadow: 0 0 40px rgba(0,0,0,0.6);
-  border: 1px solid rgba(255,255,255,0.05);
 }
 
-h1 {
-  text-align: center;
-  font-size: 34px;
-  margin-bottom: 20px;
-}
-
-input, textarea, select {
+input, select, textarea {
   width: 100%;
-  padding: 14px;
-  margin: 10px 0;
-  border-radius: 10px;
-  border: none;
-  background: rgba(255,255,255,0.05);
-  color: white;
-  font-size: 14px;
-}
-
-input:focus, textarea:focus {
-  outline: none;
-  border: 1px solid #6a00ff;
-}
-
-button {
-  width: 100%;
-  padding: 14px;
-  margin-top: 10px;
-  border: none;
-  border-radius: 12px;
-  background: linear-gradient(135deg, #6a00ff, #00c6ff);
-  color: white;
-  font-size: 16px;
-  font-weight: bold;
-  cursor: pointer;
-  transition: 0.3s;
-}
-
-button:hover {
-  transform: scale(1.03);
-  box-shadow: 0 0 20px rgba(106,0,255,0.5);
-}
-
-#trackingBox {
-  margin-top: 20px;
   padding: 12px;
-  background: rgba(0,255,200,0.1);
+  margin-bottom: 12px;
   border-radius: 10px;
+  border: none;
+}
+
+/* FOOTER */
+.footer {
   text-align: center;
-  font-weight: bold;
-  color: #00ffc3;
+  padding: 20px;
+  color: #888;
+}
+
+/* ANIMATION */
+@keyframes fadeUp {
+  from {opacity:0; transform: translateY(30px);}
+  to {opacity:1; transform: translateY(0);}
 }
