@@ -1,17 +1,4 @@
-/* RESET */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body {
-  font-family: 'Inter', sans-serif;
-  background: #0a0a0a;
-  color: white;
-}
-
-/* NAVBAR */
+/* NAVBAR FIX */
 .navbar {
   position: fixed;
   width: 100%;
@@ -26,25 +13,7 @@ body {
 }
 
 .logo {
-  height: 30px;
-}
-
-/* RIGHT NAV */
-.nav-right {
-  position: absolute;
-  right: 20px;
-}
-
-.nav-right a {
-  margin-left: 15px;
-  text-decoration: none;
-  color: white;
-  font-size: 14px;
-  opacity: 0.7;
-}
-
-.nav-right a:hover {
-  opacity: 1;
+  height: 28px;
 }
 
 /* MENU ICON */
@@ -58,13 +27,14 @@ body {
 /* SIDEBAR */
 .sidebar {
   position: fixed;
-  left: -250px;
+  left: -260px;
   top: 0;
-  width: 250px;
+  width: 260px;
   height: 100%;
   background: #111;
-  padding: 60px 20px;
+  padding: 80px 20px;
   transition: 0.4s;
+  z-index: 1001;
 }
 
 .sidebar.active {
@@ -76,92 +46,23 @@ body {
   margin: 20px 0;
   color: white;
   text-decoration: none;
+  font-size: 16px;
 }
 
-/* HERO */
-.hero {
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  text-align: center;
-  padding: 20px;
-}
-
-.hero h1 {
-  font-size: 44px;
-  font-weight: 600;
-  letter-spacing: -1px;
-  line-height: 1.1;
-}
-
-.hero p {
-  color: #9a9a9a;
-  margin-top: 10px;
-}
-
-/* BUTTONS */
-.btn-primary {
-  background: linear-gradient(90deg,#7b2ff7,#00c6ff);
-  padding: 12px 20px;
-  border-radius: 12px;
-  text-decoration: none;
-  color: white;
-  display: inline-block;
-  margin: 10px;
-  transition: 0.4s cubic-bezier(0.22,1,0.36,1);
-}
-
-.btn-primary:hover {
-  transform: translateY(-2px);
-}
-
-.btn-secondary {
-  border: 1px solid #444;
-  padding: 12px 20px;
-  border-radius: 12px;
-  color: white;
-  text-decoration: none;
-}
-
-/* SERVICES */
-.services {
-  padding: 80px 20px;
-}
-
-/* CARD */
-.card {
-  background: rgba(255,255,255,0.03);
-  padding: 22px;
-  border-radius: 18px;
-  margin-bottom: 15px;
-
+/* OVERLAY (IMPORTANT FIX) */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.5);
   opacity: 0;
-  transform: translateY(40px);
-
-  transition:
-    opacity 0.8s ease,
-    transform 0.8s cubic-bezier(0.22,1,0.36,1);
+  pointer-events: none;
+  transition: 0.3s;
 }
 
-.card.show {
+.overlay.active {
   opacity: 1;
-  transform: translateY(0);
+  pointer-events: all;
 }
-
-.card:hover {
-  background: rgba(255,255,255,0.05);
-}
-
-/* CTA */
-.cta {
-  text-align: center;
-  padding: 80px 20px;
-}
-
-/* FOOTER */
-.footer {
-  text-align: center;
-  padding: 20px;
-  color: #888;
-                              }
