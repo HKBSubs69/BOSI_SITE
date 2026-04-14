@@ -12,7 +12,6 @@
   <img src="https://i.ibb.co/S45PTZqN/Blue-Ocean-Studios-India-7-22-2024.png" class="logo">
   <nav>
     <a href="index.html">Home</a>
-    <a href="pricing.html">Services</a>
     <a href="track.html">Track</a>
   </nav>
 </header>
@@ -35,7 +34,7 @@
 
 <textarea id="submitNotes" placeholder="Details" required></textarea>
 
-<button type="submit">Submit Work</button>
+<button type="submit" class="btn-primary">Submit Work</button>
 
 <p id="submissionStatus"></p>
 <div id="trackingBox"></div>
@@ -44,15 +43,10 @@
 
 <footer class="footer">
   <p>© <span id="year"></span> Blue Ocean Studios India</p>
-  <div>
-    <a href="#">Privacy Policy</a>
-    <a href="#">Terms</a>
-    <a href="#">Contact</a>
-  </div>
 </footer>
 
 <script>
-  document.getElementById("year").innerText = new Date().getFullYear();
+document.getElementById("year").innerText = new Date().getFullYear();
 </script>
 
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
@@ -60,4 +54,4 @@
 <script src="js/submit.js"></script>
 
 </body>
-</html>
+  </html>
