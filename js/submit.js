@@ -1,3 +1,7 @@
+function generateShortId() {
+  return "BOSI-" + Math.random().toString(36).substring(2, 8).toUpperCase();
+}
+
 document.getElementById("submissionForm").addEventListener("submit", async (e) => {
   e.preventDefault();
 
@@ -11,10 +15,11 @@ document.getElementById("submissionForm").addEventListener("submit", async (e) =
   const link = document.getElementById("submitLink").value;
   const notes = document.getElementById("submitNotes").value;
 
-  const { data, error } = await supabaseClient
+  const shortId = generateShortId();
+
+  const { error } = await supabaseClient
     .from("submissions")
-    .insert([{ name, email, type, title, file_link: link, notes }])
-    .select();
+    .insert([{ id: shortId, name, email, type, title, file_link: link, notes }]);
 
   if (error) {
     status.innerText = "Error: " + error.message;
@@ -22,6 +27,5 @@ document.getElementById("submissionForm").addEventListener("submit", async (e) =
   }
 
   status.innerText = "Submitted successfully!";
-  trackingBox.innerText = "Your Tracking ID: " + data[0].id;
+  trackingBox.innerText = "Your Tracking ID: " + shortId;
 });
-
