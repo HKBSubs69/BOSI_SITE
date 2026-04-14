@@ -10,31 +10,25 @@
 
 <body>
 
-<!-- NAVBAR -->
 <header class="navbar">
-
   <div class="menu-icon" onclick="toggleMenu()">☰</div>
 
   <img src="https://i.ibb.co/S45PTZqN/Blue-Ocean-Studios-India-7-22-2024.png" class="logo">
-
 </header>
 
-<!-- OVERLAY -->
 <div class="overlay" id="overlay" onclick="toggleMenu()"></div>
 
-<!-- SIDEBAR -->
 <div class="sidebar" id="sidebar">
   <a href="index.html">Home</a>
   <a href="pricing.html">Services</a>
   <a href="track.html">Track</a>
 </div>
 
-<!-- HERO -->
 <section class="hero">
   <h1>Build. Release.<br>Dominate.</h1>
 
   <p>
-    Music distribution, ghost production & publishing — all in one place.
+    Music distribution, ghost production and publishing in one place.
   </p>
 
   <div>
@@ -43,7 +37,6 @@
   </div>
 </section>
 
-<!-- SERVICES PREVIEW -->
 <section class="services">
 
   <div class="card">
@@ -70,24 +63,24 @@
 <script>
 document.getElementById("year").innerText = new Date().getFullYear();
 
-// Sidebar toggle
 function toggleMenu() {
   document.getElementById("sidebar").classList.toggle("active");
   document.getElementById("overlay").classList.toggle("active");
 }
 
-// Smooth animation
 const cards = document.querySelectorAll(".card");
 
-const observer = new IntersectionObserver(entries => {
-  entries.forEach(entry => {
+const observer = new IntersectionObserver(function(entries) {
+  entries.forEach(function(entry) {
     if (entry.isIntersecting) {
       entry.target.classList.add("show");
     }
   });
 }, { threshold: 0.2 });
 
-cards.forEach(card => observer.observe(card));
+cards.forEach(function(card) {
+  observer.observe(card);
+});
 </script>
 
 </body>
