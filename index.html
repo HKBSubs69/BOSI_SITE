@@ -2,12 +2,9 @@
 <html>
 <head>
   <title>Blue Ocean Studios India</title>
-
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- FONT -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-
   <link rel="stylesheet" href="css/style.css">
 </head>
 
@@ -20,12 +17,10 @@
 
   <img src="https://i.ibb.co/S45PTZqN/Blue-Ocean-Studios-India-7-22-2024.png" class="logo">
 
-  <div class="nav-right">
-    <a href="pricing.html">Services</a>
-    <a href="track.html">Track</a>
-  </div>
-
 </header>
+
+<!-- OVERLAY -->
+<div class="overlay" id="overlay" onclick="toggleMenu()"></div>
 
 <!-- SIDEBAR -->
 <div class="sidebar" id="sidebar">
@@ -37,16 +32,19 @@
 <!-- HERO -->
 <section class="hero">
   <h1>Build. Release.<br>Dominate.</h1>
-  <p>Music distribution, ghost production & publishing — all in one place.</p>
+
+  <p>
+    Music distribution, ghost production & publishing — all in one place.
+  </p>
 
   <div>
     <a href="pricing.html" class="btn-primary">Get Started</a>
-    <a href="#services" class="btn-secondary">View Services</a>
+    <a href="pricing.html" class="btn-secondary">View Services</a>
   </div>
 </section>
 
-<!-- SERVICES -->
-<section id="services" class="services">
+<!-- SERVICES PREVIEW -->
+<section class="services">
 
   <div class="card">
     <h2>Music Distribution</h2>
@@ -65,12 +63,6 @@
 
 </section>
 
-<!-- CTA -->
-<section class="cta">
-  <h2>Start Your Journey</h2>
-  <a href="pricing.html" class="btn-primary">Get Started</a>
-</section>
-
 <footer class="footer">
   <p>© <span id="year"></span> Blue Ocean Studios India</p>
 </footer>
@@ -81,9 +73,10 @@ document.getElementById("year").innerText = new Date().getFullYear();
 // Sidebar toggle
 function toggleMenu() {
   document.getElementById("sidebar").classList.toggle("active");
+  document.getElementById("overlay").classList.toggle("active");
 }
 
-// Smooth animation (Intersection Observer)
+// Smooth animation
 const cards = document.querySelectorAll(".card");
 
 const observer = new IntersectionObserver(entries => {
