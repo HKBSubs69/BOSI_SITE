@@ -1,3 +1,4 @@
+/* RESET */
 * {
   margin: 0;
   padding: 0;
@@ -5,9 +6,9 @@
 }
 
 body {
+  font-family: 'Inter', sans-serif;
   background: #0a0a0a;
   color: white;
-  font-family: sans-serif;
 }
 
 /* NAVBAR */
@@ -15,19 +16,64 @@ body {
   position: fixed;
   width: 100%;
   top: 0;
-  display: flex;
-  justify-content: space-between;
-  padding: 15px 20px;
+  height: 60px;
   background: rgba(0,0,0,0.6);
   backdrop-filter: blur(10px);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .logo {
-  height: 35px;
+  height: 30px;
 }
 
-nav a {
+/* RIGHT NAV */
+.nav-right {
+  position: absolute;
+  right: 20px;
+}
+
+.nav-right a {
   margin-left: 15px;
+  text-decoration: none;
+  color: white;
+  font-size: 14px;
+  opacity: 0.7;
+}
+
+.nav-right a:hover {
+  opacity: 1;
+}
+
+/* MENU ICON */
+.menu-icon {
+  position: absolute;
+  left: 20px;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+/* SIDEBAR */
+.sidebar {
+  position: fixed;
+  left: -250px;
+  top: 0;
+  width: 250px;
+  height: 100%;
+  background: #111;
+  padding: 60px 20px;
+  transition: 0.4s;
+}
+
+.sidebar.active {
+  left: 0;
+}
+
+.sidebar a {
+  display: block;
+  margin: 20px 0;
   color: white;
   text-decoration: none;
 }
@@ -39,30 +85,43 @@ nav a {
   flex-direction: column;
   justify-content: center;
   text-align: center;
+  padding: 20px;
 }
 
 .hero h1 {
-  font-size: 42px;
-  animation: fadeUp 1s;
+  font-size: 44px;
+  font-weight: 600;
+  letter-spacing: -1px;
+  line-height: 1.1;
 }
 
 .hero p {
-  color: #aaa;
-  margin: 10px;
+  color: #9a9a9a;
+  margin-top: 10px;
 }
 
-/* BUTTON */
+/* BUTTONS */
 .btn-primary {
   background: linear-gradient(90deg,#7b2ff7,#00c6ff);
   padding: 12px 20px;
-  border-radius: 10px;
+  border-radius: 12px;
   text-decoration: none;
   color: white;
+  display: inline-block;
   margin: 10px;
+  transition: 0.4s cubic-bezier(0.22,1,0.36,1);
 }
 
 .btn-primary:hover {
-  transform: scale(1.05);
+  transform: translateY(-2px);
+}
+
+.btn-secondary {
+  border: 1px solid #444;
+  padding: 12px 20px;
+  border-radius: 12px;
+  color: white;
+  text-decoration: none;
 }
 
 /* SERVICES */
@@ -70,14 +129,19 @@ nav a {
   padding: 80px 20px;
 }
 
+/* CARD */
 .card {
   background: rgba(255,255,255,0.03);
-  margin: 15px 0;
-  padding: 20px;
-  border-radius: 15px;
+  padding: 22px;
+  border-radius: 18px;
+  margin-bottom: 15px;
+
   opacity: 0;
-  transform: translateY(30px);
-  transition: 0.4s;
+  transform: translateY(40px);
+
+  transition:
+    opacity 0.8s ease,
+    transform 0.8s cubic-bezier(0.22,1,0.36,1);
 }
 
 .card.show {
@@ -85,21 +149,14 @@ nav a {
   transform: translateY(0);
 }
 
-/* FORM */
-form {
-  margin: 120px auto;
-  max-width: 400px;
-  padding: 20px;
-  background: rgba(255,255,255,0.03);
-  border-radius: 20px;
+.card:hover {
+  background: rgba(255,255,255,0.05);
 }
 
-input, select, textarea {
-  width: 100%;
-  padding: 12px;
-  margin-bottom: 12px;
-  border-radius: 10px;
-  border: none;
+/* CTA */
+.cta {
+  text-align: center;
+  padding: 80px 20px;
 }
 
 /* FOOTER */
@@ -107,10 +164,4 @@ input, select, textarea {
   text-align: center;
   padding: 20px;
   color: #888;
-}
-
-/* ANIMATION */
-@keyframes fadeUp {
-  from {opacity:0; transform: translateY(30px);}
-  to {opacity:1; transform: translateY(0);}
-}
+                              }
