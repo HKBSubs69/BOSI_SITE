@@ -1,29 +1,11 @@
-document.getElementById("year").innerText = new Date().getFullYear();
-
-// SIDEBAR
-function toggleMenu() {
-  document.getElementById("sidebar").classList.toggle("active");
-  document.getElementById("overlay").classList.toggle("active");
+function openMenu(){
+document.getElementById("sidebar").classList.add("active");
+document.getElementById("overlay").classList.add("active");
 }
 
-// SCROLL + REVERSE ANIMATION
-const elements = document.querySelectorAll(".fade");
+function closeMenu(){
+document.getElementById("sidebar").classList.remove("active");
+document.getElementById("overlay").classList.remove("active");
+}
 
-window.addEventListener("scroll", () => {
-  elements.forEach(el => {
-    const top = el.getBoundingClientRect().top;
-
-    if (top < window.innerHeight - 80) {
-      el.classList.add("show");
-    } else {
-      el.classList.remove("show");
-    }
-  });
-});
-
-// PARALLAX EFFECT
-window.addEventListener("scroll", () => {
-  const y = window.scrollY;
-  document.querySelector(".bg-gradient").style.transform =
-    "translateY(" + y * 0.1 + "px)";
-});
+document.getElementById("year").innerText = new Date().getFullYear();
