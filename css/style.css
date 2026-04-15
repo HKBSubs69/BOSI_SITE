@@ -11,16 +11,20 @@ body {
   overflow-x: hidden;
 }
 
-/* CURSOR GLOW */
-.cursor-glow {
+/* MOVING BACKGROUND */
+.bg-gradient {
   position: fixed;
-  width: 300px;
-  height: 300px;
-  background: radial-gradient(circle, rgba(123,47,247,0.25), transparent);
-  pointer-events: none;
-  border-radius: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 0;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle at 30% 30%, rgba(123,47,247,0.25), transparent),
+              radial-gradient(circle at 70% 60%, rgba(0,198,255,0.2), transparent);
+  animation: moveBg 12s infinite alternate ease-in-out;
+  z-index: -1;
+}
+
+@keyframes moveBg {
+  from { transform: translate(0,0); }
+  to { transform: translate(-10%, -10%); }
 }
 
 /* NAVBAR */
@@ -31,8 +35,8 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: rgba(255,255,255,0.05);
   backdrop-filter: blur(14px);
+  background: rgba(0,0,0,0.4);
   z-index: 1000;
 }
 
@@ -92,18 +96,19 @@ body {
 .hero {
   height: 100vh;
   display: flex;
-  flex-direction: column;
   justify-content: center;
+  align-items: center;
+}
+
+.hero-content {
   text-align: center;
+  max-width: 600px;
 }
 
 .hero h1 {
-  font-size: 50px;
+  font-size: 52px;
   font-weight: 700;
   letter-spacing: -1.5px;
-  background: linear-gradient(90deg,#fff,#888);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
 }
 
 .hero p {
@@ -122,11 +127,12 @@ body {
   border-radius: 14px;
   text-decoration: none;
   color: white;
+  margin-right: 10px;
   transition: 0.3s;
 }
 
 .btn-primary:hover {
-  transform: translateY(-2px);
+  transform: translateY(-3px);
 }
 
 .btn-secondary {
@@ -135,19 +141,11 @@ body {
   border-radius: 14px;
   text-decoration: none;
   color: white;
-  margin-left: 10px;
-}
-
-/* TRUST */
-.trust {
-  text-align: center;
-  padding: 40px;
-  color: #888;
 }
 
 /* SERVICES */
 .services {
-  padding: 60px 20px;
+  padding: 80px 20px;
 }
 
 .card {
@@ -155,23 +153,29 @@ body {
   backdrop-filter: blur(12px);
   padding: 25px;
   border-radius: 16px;
-  margin-bottom: 15px;
-  opacity: 0;
-  transform: translateY(40px);
-  transition: 0.8s ease;
-}
-
-.card.show {
-  opacity: 1;
-  transform: translateY(0);
+  margin-bottom: 20px;
+  transition: 0.4s;
 }
 
 .card:hover {
-  transform: translateY(-5px);
+  transform: translateY(-8px);
 }
 
+/* FOOTER */
 .footer {
   text-align: center;
   padding: 20px;
   color: #777;
+}
+
+/* ANIMATION */
+.fade {
+  opacity: 0;
+  transform: translateY(60px);
+  transition: 1s ease;
+}
+
+.fade.show {
+  opacity: 1;
+  transform: translateY(0);
 }
