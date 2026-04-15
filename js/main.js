@@ -1,6 +1,6 @@
-function toggleMenu(){
-const menu = document.getElementById("mobileMenu");
-menu.classList.toggle("active");
+function toggleMenu() {
+  var menu = document.getElementById("menu");
+  menu.classList.toggle("active");
 }
 
 document.getElementById("year").innerText = new Date().getFullYear();
