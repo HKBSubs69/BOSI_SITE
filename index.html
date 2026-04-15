@@ -1,53 +1,50 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Blue Ocean Studios India</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blue Ocean Studios India</title>
 
-<link rel="stylesheet" href="style.css">
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<div class="bg"></div>
-
 <!-- NAVBAR -->
-<header class="nav">
+<div class="nav">
   <div class="menu" onclick="toggleMenu()">☰</div>
 
-  <a href="index.html" class="logo">
+  <div class="logo">
     <img src="https://i.ibb.co/S45PTZqN/Blue-Ocean-Studios-India-7-22-2024.png">
-  </a>
+  </div>
 
   <div class="nav-links">
     <a href="#">Home</a>
-    <a href="#services">Services</a>
-    <a href="track.html">Track</a>
+    <a href="#">Services</a>
+    <a href="#">Track</a>
   </div>
-</header>
+</div>
 
 <!-- MOBILE MENU -->
-<div class="mobile-menu" id="mobileMenu">
+<div class="mobile-menu" id="menu">
   <a href="#">Home</a>
-  <a href="#services">Services</a>
-  <a href="track.html">Track</a>
+  <a href="#">Services</a>
+  <a href="#">Track</a>
 </div>
 
 <!-- HERO -->
-<section class="hero">
+<div class="hero">
   <h1>Music & Publishing<br>Built Better</h1>
   <p>Distribution, production and publishing — simplified.</p>
 
   <div class="cta">
-    <a href="#services" class="btn primary">Get Started</a>
-    <a href="#services" class="btn secondary">Explore</a>
+    <a href="#" class="btn primary">Get Started</a>
+    <a href="#" class="btn secondary">Explore</a>
   </div>
-</section>
+</div>
 
 <!-- SERVICES -->
-<section class="services" id="services">
-
+<div class="services">
   <div class="card">
     <h2>Music Distribution</h2>
     <p>Release your tracks worldwide.</p>
@@ -62,18 +59,11 @@
     <h2>E-Book Publishing</h2>
     <p>Publish on Google Play Books.</p>
   </div>
-
-</section>
-
-<!-- CTA -->
-<section class="cta-section">
-  <h2>Start Building Today</h2>
-  <a href="#services" class="btn primary">Get Started</a>
-</section>
+</div>
 
 <!-- FOOTER -->
 <footer>
-  <p>© <span id="year"></span> Blue Ocean Studios India</p>
+  © <span id="year"></span> Blue Ocean Studios India
 </footer>
 
 <script src="main.js"></script>
