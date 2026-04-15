@@ -1,3 +1,4 @@
+/* RESET */
 body {
   margin: 0;
   font-family: Arial, sans-serif;
@@ -11,18 +12,18 @@ body {
   justify-content: space-between;
   align-items: center;
   padding: 15px;
+  background: #0a0a0a;
   position: fixed;
   width: 100%;
   top: 0;
-  background: rgba(10,10,10,0.8);
 }
 
 .logo img {
-  height: 26px;
+  height: 30px;
 }
 
 .nav-links a {
-  margin-left: 10px;
+  margin-left: 12px;
   color: #aaa;
   text-decoration: none;
 }
@@ -58,14 +59,12 @@ body {
 
 /* HERO */
 .hero {
-  height: 100vh;
   text-align: center;
-  padding-top: 120px;
+  padding: 120px 20px 60px;
 }
 
 .hero h1 {
-  font-size: 34px;
-  margin-bottom: 10px;
+  font-size: 32px;
 }
 
 .hero p {
@@ -73,15 +72,11 @@ body {
 }
 
 /* BUTTONS */
-.cta {
-  margin-top: 20px;
-}
-
 .btn {
   display: inline-block;
-  padding: 12px 18px;
+  padding: 10px 16px;
   margin: 5px;
-  border-radius: 10px;
+  border-radius: 8px;
   text-decoration: none;
 }
 
@@ -97,26 +92,14 @@ body {
 
 /* SERVICES */
 .services {
-  padding: 60px 20px;
+  padding: 40px 20px;
 }
 
 .card {
   background: #111;
-  padding: 20px;
-  margin-bottom: 15px;
-  border-radius: 12px;
-  transition: 0.3s;
-}
-
-.card:hover {
-  transform: translateY(-5px);
-  background: #151515;
-}
-
-/* CTA SECTION */
-.cta-section {
-  text-align: center;
-  padding: 50px 20px;
+  padding: 15px;
+  margin-bottom: 12px;
+  border-radius: 10px;
 }
 
 /* FOOTER */
@@ -124,28 +107,6 @@ footer {
   text-align: center;
   padding: 20px;
   color: #777;
-}
-
-/* SIMPLE FADE ANIMATION */
-.hero h1 {
-  opacity: 0;
-  animation: fadeIn 1s forwards;
-}
-
-.hero p {
-  opacity: 0;
-  animation: fadeIn 1.5s forwards;
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
 }
 
 /* MOBILE */
