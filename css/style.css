@@ -5,64 +5,75 @@
 }
 
 body {
-  font-family: Inter, sans-serif;
+  font-family: 'Inter', sans-serif;
   background: #050505;
-  color: #ffffff;
+  color: #fff;
   overflow-x: hidden;
 }
 
-/* BACKGROUND */
+/* ===== BACKGROUND ANIMATION ===== */
 .bg-gradient {
   position: fixed;
   width: 200%;
   height: 200%;
-  top: 0;
-  left: 0;
-  background: radial-gradient(circle at 30% 30%, rgba(123,47,247,0.25), transparent),
-              radial-gradient(circle at 70% 60%, rgba(0,198,255,0.2), transparent);
-  animation: moveBg 12s ease-in-out infinite alternate;
+  top: -50%;
+  left: -50%;
+  background: radial-gradient(circle, rgba(123,47,247,0.25), transparent 60%),
+              radial-gradient(circle, rgba(0,198,255,0.2), transparent 60%);
+  animation: bgMove 18s ease-in-out infinite alternate;
   z-index: -1;
 }
 
-@keyframes moveBg {
-  0% { transform: translate(0,0); }
-  100% { transform: translate(-10%,-10%); }
+@keyframes bgMove {
+  0% { transform: translate(0,0) scale(1); }
+  100% { transform: translate(-10%,-10%) scale(1.1); }
 }
 
-/* NAVBAR */
+/* ===== NAVBAR ===== */
 .navbar {
   position: fixed;
   width: 100%;
   height: 60px;
+  background: rgba(0,0,0,0.4);
+  backdrop-filter: blur(14px);
   display: flex;
   align-items: center;
   justify-content: center;
-  background: rgba(0,0,0,0.4);
-  backdrop-filter: blur(10px);
   z-index: 1000;
 }
 
 .logo {
-  height: 28px;
+  height: 26px;
+  transition: 0.3s;
 }
 
+.logo:hover {
+  transform: scale(1.05);
+}
+
+/* MENU */
 .menu-icon {
   position: absolute;
   left: 20px;
-  font-size: 22px;
+  font-size: 24px;
   cursor: pointer;
+  transition: 0.3s;
 }
 
-/* SIDEBAR */
+.menu-icon:hover {
+  transform: scale(1.2);
+}
+
+/* ===== SIDEBAR ===== */
 .sidebar {
   position: fixed;
   left: -260px;
   top: 0;
   width: 260px;
   height: 100%;
-  background: #111;
+  background: #0d0d0d;
   padding: 80px 20px;
-  transition: 0.3s;
+  transition: 0.4s ease;
   z-index: 2000;
 }
 
@@ -73,11 +84,18 @@ body {
 .sidebar a {
   display: block;
   margin: 20px 0;
-  color: white;
+  color: #fff;
   text-decoration: none;
+  font-size: 18px;
+  transition: 0.3s;
 }
 
-/* OVERLAY */
+.sidebar a:hover {
+  color: #00c6ff;
+  transform: translateX(5px);
+}
+
+/* ===== OVERLAY ===== */
 .overlay {
   position: fixed;
   width: 100%;
@@ -93,83 +111,98 @@ body {
   visibility: visible;
 }
 
-/* HERO */
+/* ===== HERO ===== */
 .hero {
   height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
+  padding: 0 20px;
 }
 
 .hero h1 {
   font-size: 42px;
   font-weight: 700;
+  opacity: 0;
+  transform: translateY(40px);
+  animation: fadeUp 1s ease forwards;
 }
 
 .hero p {
   margin-top: 12px;
-  color: #aaaaaa;
+  color: #aaa;
+  opacity: 0;
+  transform: translateY(40px);
+  animation: fadeUp 1.2s ease forwards;
 }
 
-/* BUTTONS */
+/* ===== BUTTONS ===== */
 .buttons {
   margin-top: 20px;
+  opacity: 0;
+  transform: translateY(40px);
+  animation: fadeUp 1.4s ease forwards;
 }
 
 .btn-primary {
   background: linear-gradient(90deg, #7b2ff7, #00c6ff);
-  padding: 12px 20px;
+  padding: 12px 22px;
   border-radius: 12px;
+  color: #fff;
   text-decoration: none;
-  color: white;
-  display: inline-block;
   margin-right: 10px;
+  transition: 0.3s;
+  box-shadow: 0 0 20px rgba(123,47,247,0.4);
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 30px rgba(123,47,247,0.8);
 }
 
 .btn-secondary {
   border: 1px solid #333;
-  padding: 12px 20px;
+  padding: 12px 22px;
   border-radius: 12px;
+  color: #fff;
   text-decoration: none;
-  color: white;
+  transition: 0.3s;
 }
 
-/* SERVICES */
+.btn-secondary:hover {
+  border-color: #00c6ff;
+}
+
+/* ===== SERVICES ===== */
 .services {
-  padding: 60px 20px;
+  padding: 80px 20px;
 }
 
 .card {
-  background: rgba(255,255,255,0.04);
-  padding: 20px;
-  border-radius: 14px;
-  margin-bottom: 15px;
-  opacity: 0;
-  transform: translateY(40px);
-  transition: 0.6s;
+  background: rgba(255,255,255,0.05);
+  padding: 25px;
+  border-radius: 16px;
+  margin-bottom: 20px;
+  transition: 0.4s;
 }
 
-.card.show {
-  opacity: 1;
-  transform: translateY(0);
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0,198,255,0.2);
 }
 
-/* FOOTER */
+/* ===== FOOTER ===== */
 .footer {
   text-align: center;
   padding: 20px;
   color: #777;
 }
 
-/* ANIMATION */
-.fade {
-  opacity: 0;
-  transform: translateY(40px);
-  transition: 0.8s;
-}
-
-.fade.show {
-  opacity: 1;
-  transform: translateY(0);
+/* ===== ANIMATION ===== */
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
