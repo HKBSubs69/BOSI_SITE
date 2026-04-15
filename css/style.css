@@ -2,28 +2,41 @@
 body {
   margin: 0;
   font-family: Arial, sans-serif;
-  background: #0a0a0a;
+  background: #050505;
   color: white;
+  overflow-x: hidden;
 }
 
-/* NAVBAR */
+/* MOUSE GLOW */
+.glow {
+  position: fixed;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(123,47,247,0.25), transparent);
+  pointer-events: none;
+  z-index: -1;
+  transform: translate(-50%, -50%);
+}
+
+/* NAV */
 .nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 15px;
-  background: #0a0a0a;
   position: fixed;
   width: 100%;
   top: 0;
+  background: rgba(10,10,10,0.7);
+  backdrop-filter: blur(12px);
 }
 
 .logo img {
-  height: 30px;
+  height: 28px;
 }
 
 .nav-links a {
-  margin-left: 12px;
+  margin-left: 15px;
   color: #aaa;
   text-decoration: none;
 }
@@ -43,12 +56,12 @@ body {
 .mobile-menu {
   display: none;
   background: #111;
-  padding: 15px;
+  padding: 20px;
 }
 
 .mobile-menu a {
   display: block;
-  margin: 10px 0;
+  margin: 12px 0;
   color: white;
   text-decoration: none;
 }
@@ -59,25 +72,34 @@ body {
 
 /* HERO */
 .hero {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 20px;
   text-align: center;
-  padding: 120px 20px 60px;
 }
 
 .hero h1 {
-  font-size: 32px;
+  font-size: 42px;
+  line-height: 1.2;
+  animation: fadeUp 1s ease forwards;
 }
 
 .hero p {
   color: #aaa;
+  margin-top: 10px;
+  animation: fadeUp 1.3s ease forwards;
 }
 
 /* BUTTONS */
 .btn {
   display: inline-block;
-  padding: 10px 16px;
-  margin: 5px;
-  border-radius: 8px;
+  padding: 12px 18px;
+  margin: 10px;
+  border-radius: 10px;
   text-decoration: none;
+  transition: 0.3s;
 }
 
 .primary {
@@ -85,21 +107,37 @@ body {
   color: white;
 }
 
+.primary:hover {
+  transform: scale(1.05);
+}
+
 .secondary {
   border: 1px solid #333;
   color: white;
 }
 
+.secondary:hover {
+  background: #111;
+}
+
 /* SERVICES */
 .services {
-  padding: 40px 20px;
+  padding: 60px 20px;
 }
 
 .card {
   background: #111;
-  padding: 15px;
-  margin-bottom: 12px;
-  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 15px;
+  border-radius: 14px;
+  opacity: 0;
+  transform: translateY(40px);
+  transition: 0.5s;
+}
+
+.card.show {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 /* FOOTER */
@@ -107,6 +145,18 @@ footer {
   text-align: center;
   padding: 20px;
   color: #777;
+}
+
+/* ANIMATION */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* MOBILE */
