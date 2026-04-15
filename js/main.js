@@ -1,16 +1,13 @@
 // YEAR
 document.getElementById("year").innerText = new Date().getFullYear();
 
-// SIDEBAR TOGGLE
+// SIDEBAR
 function toggleMenu() {
-  const sidebar = document.getElementById("sidebar");
-  const overlay = document.getElementById("overlay");
-
-  sidebar.classList.toggle("active");
-  overlay.classList.toggle("active");
+  document.getElementById("sidebar").classList.toggle("active");
+  document.getElementById("overlay").classList.toggle("active");
 }
 
-// CLOSE WHEN CLICK LINK
+// CLOSE SIDEBAR
 document.querySelectorAll(".sidebar a").forEach(link => {
   link.addEventListener("click", () => {
     document.getElementById("sidebar").classList.remove("active");
@@ -18,7 +15,7 @@ document.querySelectorAll(".sidebar a").forEach(link => {
   });
 });
 
-// ANIMATION
+// SCROLL ANIMATION
 const cards = document.querySelectorAll(".card");
 
 const observer = new IntersectionObserver(entries => {
@@ -30,3 +27,11 @@ const observer = new IntersectionObserver(entries => {
 }, { threshold: 0.2 });
 
 cards.forEach(card => observer.observe(card));
+
+// CURSOR GLOW
+const glow = document.querySelector(".cursor-glow");
+
+document.addEventListener("mousemove", e => {
+  glow.style.left = e.clientX + "px";
+  glow.style.top = e.clientY + "px";
+});
