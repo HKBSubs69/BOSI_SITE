@@ -1,11 +1,6 @@
-function openMenu(){
-document.getElementById("sidebar").classList.add("active");
-document.getElementById("overlay").classList.add("active");
-}
-
-function closeMenu(){
-document.getElementById("sidebar").classList.remove("active");
-document.getElementById("overlay").classList.remove("active");
+function toggleMenu(){
+const menu = document.getElementById("mobileMenu");
+menu.classList.toggle("active");
 }
 
 document.getElementById("year").innerText = new Date().getFullYear();
