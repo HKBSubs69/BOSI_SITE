@@ -1,4 +1,3 @@
-// YEAR
 document.getElementById("year").innerText = new Date().getFullYear();
 
 // SIDEBAR
@@ -7,31 +6,24 @@ function toggleMenu() {
   document.getElementById("overlay").classList.toggle("active");
 }
 
-// CLOSE SIDEBAR
-document.querySelectorAll(".sidebar a").forEach(link => {
-  link.addEventListener("click", () => {
-    document.getElementById("sidebar").classList.remove("active");
-    document.getElementById("overlay").classList.remove("active");
+// SCROLL + REVERSE ANIMATION
+const elements = document.querySelectorAll(".fade");
+
+window.addEventListener("scroll", () => {
+  elements.forEach(el => {
+    const top = el.getBoundingClientRect().top;
+
+    if (top < window.innerHeight - 80) {
+      el.classList.add("show");
+    } else {
+      el.classList.remove("show");
+    }
   });
 });
 
-// SCROLL ANIMATION
-const cards = document.querySelectorAll(".card");
-
-const observer = new IntersectionObserver(entries => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add("show");
-    }
-  });
-}, { threshold: 0.2 });
-
-cards.forEach(card => observer.observe(card));
-
-// CURSOR GLOW
-const glow = document.querySelector(".cursor-glow");
-
-document.addEventListener("mousemove", e => {
-  glow.style.left = e.clientX + "px";
-  glow.style.top = e.clientY + "px";
+// PARALLAX EFFECT
+window.addEventListener("scroll", () => {
+  const y = window.scrollY;
+  document.querySelector(".bg-gradient").style.transform =
+    "translateY(" + y * 0.1 + "px)";
 });
