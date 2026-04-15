@@ -1,78 +1,101 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Blue Ocean Studios India</title>
 
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="style.css">
 
 </head>
-
 <body>
 
-<div class="bg-gradient"></div>
+<div class="bg"></div>
 
-<header class="navbar">
-<div class="menu-icon" onclick="toggleMenu()">☰</div>
+<!-- NAVBAR -->
+<header class="nav">
+  <div class="menu" onclick="openMenu()">☰</div>
 
-<a href="index.html">
-<img src="https://i.ibb.co/S45PTZqN/Blue-Ocean-Studios-India-7-22-2024.png" class="logo">
-</a>
+  <a href="index.html" class="logo">
+    <img src="https://i.ibb.co/S45PTZqN/Blue-Ocean-Studios-India-7-22-2024.png">
+  </a>
 </header>
 
-<div class="overlay" id="overlay" onclick="toggleMenu()"></div>
-
+<!-- SIDEBAR -->
 <div class="sidebar" id="sidebar">
-<a href="index.html">Home</a>
-<a href="pricing.html">Services</a>
-<a href="track.html">Track</a>
+  <div class="close" onclick="closeMenu()">✕</div>
+  <a href="index.html">Home</a>
+  <a href="#services">Services</a>
+  <a href="track.html">Track</a>
 </div>
 
+<div class="overlay" id="overlay" onclick="closeMenu()"></div>
+
+<!-- HERO -->
 <section class="hero">
+  <h1>Build. Release.<br>Dominate.</h1>
+  <p>Music distribution, production & publishing — built for serious creators.</p>
 
-<div class="hero-content">
+  <div class="cta">
+    <a href="#services" class="btn main">Get Started</a>
+    <a href="#services" class="btn ghost">Explore</a>
+  </div>
+</section>
 
-<h1 class="fade">Build. Release. Dominate.</h1>
+<!-- TRUST -->
+<section class="trust">
+  <div>150+ Artists</div>
+  <div>1M+ Streams</div>
+  <div>Global Reach</div>
+</section>
 
-<p class="fade">
-A premium system for creators who move differently.
-</p>
+<!-- SERVICES -->
+<section class="services" id="services">
 
-<div class="buttons fade">
-<a href="pricing.html" class="btn-primary">Get Started</a>
-<a href="pricing.html" class="btn-secondary">Explore</a>
-</div>
+  <div class="service">
+    <h2>Music Distribution</h2>
+    <p>Release your tracks worldwide on all major platforms.</p>
+  </div>
 
-</div>
+  <div class="service">
+    <h2>Ghost Production</h2>
+    <p>Get industry-level tracks built for your sound.</p>
+  </div>
+
+  <div class="service">
+    <h2>E-Book Publishing</h2>
+    <p>Publish your book on Google Play Books.</p>
+  </div>
 
 </section>
 
-<section class="services">
+<!-- SYSTEM -->
+<section class="system">
+  <h2>We don’t just deliver.<br>We build creators.</h2>
 
-<div class="card fade">
-<h2>Music Distribution</h2>
-<p>Global reach with control.</p>
-</div>
-
-<div class="card fade">
-<h2>Ghost Production</h2>
-<p>Custom sound engineered for impact.</p>
-</div>
-
-<div class="card fade">
-<h2>E-Book Publishing</h2>
-<p>Scale your ideas into assets.</p>
-</div>
-
+  <div class="grid">
+    <div>Distribution</div>
+    <div>Branding</div>
+    <div>Monetization</div>
+  </div>
 </section>
 
-<footer class="footer">
-<p>© <span id="year"></span> Blue Ocean Studios India</p>
+<!-- CTA -->
+<section class="final">
+  <h2>Start Your Journey</h2>
+  <a href="#services" class="btn main">Get Started</a>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p>© <span id="year"></span> Blue Ocean Studios India</p>
+  <div>
+    <a href="#">Privacy</a>
+    <a href="#">Terms</a>
+    <a href="#">Contact</a>
+  </div>
 </footer>
 
-<script src="js/main.js"></script>
-
+<script src="script.js"></script>
 </body>
 </html>
